@@ -6,3 +6,25 @@ window.addEventListener('scroll', function() {
         header.classList.remove('scrolled');
     }
 });
+
+function adjustBannerImageHeight() {
+    const banner = document.querySelector('.banner');
+    const bannerImage = document.querySelector('.banner-image');
+    const viewportWidth = window.innerWidth;
+    
+    const bannerHeight = banner.offsetHeight;
+    const bannerMarginTop = parseFloat(window.getComputedStyle(banner).marginTop);
+    const bannerMarginBottom = parseFloat(window.getComputedStyle(banner).marginBottom);
+    const totalHeight = bannerHeight + bannerMarginTop + bannerMarginBottom;
+
+    if (viewportWidth > 1200) {
+        bannerImage.style.height = totalHeight + 'px';
+    } else if (viewportWidth > 768) {
+        // bannerImage.style.width = '70%';
+    } else {
+        // bannerImage.style.width = '100%';
+    }
+}
+
+window.addEventListener('load', adjustBannerImageHeight);
+window.addEventListener('resize', adjustBannerImageHeight);
