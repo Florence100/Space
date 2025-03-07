@@ -1,0 +1,220 @@
+/* CSS Variables */
+:root {
+    --text-color: #FFFFFF;
+    --bg-color-1: #222222;
+    --bg-color-2: #282829;
+    --accent-color: #D5C9BE;
+    --primary-color: #E90330;
+    --btn-light-bg: #FFFFFF;
+    --btn-light-text: #222222;
+    --btn-dark-bg: #222222;
+    --btn-dark-text: #FFFFFF;
+}
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color-1);
+    color: var(--text-color);
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+}
+
+input, textarea {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    outline: none;
+    resize: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited {
+    color: inherit;
+}
+
+/* Container Styles */
+.container {
+    max-width: 1640px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    border: 1px dashed white;
+}
+
+@media (max-width: 1920px) {
+    .container {
+        max-width: 1640px;
+    }
+}
+
+@media (max-width: 1640px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 960px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (max-width: 720px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (max-width: 540px) {
+    .container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+}
+
+/* Styling Buttons */
+.btn-light {
+    background-color: var(--btn-light-bg);
+    color: var(--btn-light-text);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btn-light:hover {
+    background-color: var(--primary-color);
+    color: var(--btn-dark-bg);
+}
+
+.btn-dark {
+    background-color: var(--btn-dark-bg);
+    color: var(--btn-dark-text);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btn-dark:hover {
+    background-color: var(--primary-color);
+    color: var(--btn-light-bg);
+}
+
+/* Icons Styles */
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: var(--accent-color);
+    fill: var(--accent-color);
+}
+
+.icon-users {
+    width: 1.125em;
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--bg-color-1);
+    color: var(--text-color);
+    padding: 10px 0;
+    transition: background-color 0.3s;
+}
+
+header .container {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header.scrolled {
+    background-color: var(--bg-color-2);
+}
+
+.logo img {
+    max-width: 100px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Main Content Styles */
+main {
+    padding-top: 100px;
+}
+
+/* Footer Content Styles */
+.call-to-action {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.logo-and-social,
+.footer-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
