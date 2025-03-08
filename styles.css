@@ -677,6 +677,7 @@ nav a:hover {
         font-size: 18px;
         flex-direction: column;
         gap: 20px;
+        text-align: center;
     }
 }
 
