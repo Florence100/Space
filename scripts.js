@@ -19,10 +19,9 @@ function adjustBannerImageHeight() {
 
     if (viewportWidth > 1200) {
         bannerImage.style.height = totalHeight + 'px';
-    } else if (viewportWidth > 768) {
-        // bannerImage.style.width = '70%';
+        bannerImage.style.width = '40vw';
     } else {
-        // bannerImage.style.width = '100%';
+        bannerImage.style.width = '100vw';
     }
 }
 

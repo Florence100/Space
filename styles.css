@@ -28,6 +28,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: var(--bg-color-1);
@@ -37,6 +41,13 @@ body {
     justify-content: space-between;
     min-height: 100vh;
     line-height: 1.2;
+    font-size: calc(0.5vw + 10px);
+}
+
+@media (max-width: 1200px) {
+    body {
+        font-size: 16px;
+    }
 }
 
 button {
@@ -132,18 +143,23 @@ a:visited {
 
 /* Styling Buttons */
 button {
-    font-size: 24px;
+    font-size: calc(0.7vw + 10px);
     text-transform: uppercase;
     border-radius: 4px;
     transition: 0.3s;
+    padding: 32px 50px;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.btn-big {
+    width: 100%;
 }
 
 .btn-light {
     background-color: var(--btn-light-bg);
     color: var(--btn-light-text);
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
 }
 
 .btn-light:hover {
@@ -154,14 +170,36 @@ button {
 .btn-dark {
     background-color: var(--btn-dark-bg);
     color: var(--btn-dark-text);
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
 }
 
 .btn-dark:hover {
     background-color: var(--primary-color);
     color: var(--btn-light-bg);
+}
+
+@media (max-width: 1200px) {
+    button {
+        font-size: 18px;
+        padding: 25px 50px;
+    }
+}
+
+@media (max-width: 960px) {
+    button {
+        padding: 20px 50px;
+    }
+}
+
+@media (max-width: 720px) {
+    button {
+        padding: 15px 30px;
+    }
+}
+
+@media (max-width: 540px) {
+    button {
+        font-size: 16px;
+    }
 }
 
 /* Styles Inputs */
@@ -174,8 +212,24 @@ input[type="email"] {
     border: 1px solid var(--accent-color);
     border-radius: 4px;
     margin-top: 15px;
-    font-size: 24px;
+    font-size: calc(0.7vw + 10px);
     color: var(--text-gray-color-1);
+}
+
+@media (max-width: 1200px) {
+    input[type="text"],
+    input[type="email"] {
+        font-size: 18px;
+        padding: 15px 30px;
+    }
+}
+
+@media (max-width: 540px) {
+    input[type="text"],
+    input[type="email"] {
+        font-size: 16px;
+        padding: 15px 20px;
+    }
 }
 
 .checkbox {
@@ -189,14 +243,13 @@ input[type="email"] {
 .checkbox-label {
     padding-left: 15px;
     color: var(--bg-color-2);
-    font-size: 20px;
     cursor: pointer;
 }
 
 .checkbox-input {
     appearance: none;
     position: relative;
-    width: 24px;
+    min-width: 24px;
     height: 24px;
     background: var(--bg-light-color);
     border-radius: 4px;
@@ -212,10 +265,10 @@ input[type="email"] {
     left: 3px;
     width: 0px;
     height: 0px;
-    font-size: 20px;
     transition: 0.3s;
     overflow: hidden;
     color: var(--text-gray-color-2);
+    font-size: 20px;
 }
 
 .checkbox-input:checked::after,
@@ -253,11 +306,11 @@ input[type="email"] {
 }
 
 h2 {
-    font-size: 80px;
+    font-size: calc(3.5vw + 13px);
 }
 
 h3 {
-    font-size: 54px;
+    font-size: calc(2.25vw + 11px);
 }
 
 /* Header Styles */
@@ -272,7 +325,7 @@ header {
 }
 
 header.scrolled {
-    background-color: rgba(28, 28, 28, 0.8);
+    background-color: rgba(28, 28, 28, 0.9);
     z-index: 1000;
 }
 
@@ -311,6 +364,44 @@ nav a:hover {
     color: var(--primary-color);
 }
 
+@media (max-width: 1200px) {
+    header {
+        padding: 20px;
+        background-color: var(--bg-color-1);
+        z-index: 1000;
+    }
+
+    header .align-switch {
+        width: 100%;
+    }
+
+    header.scrolled {
+        background-color: rgb(28, 28, 28);
+    }
+
+    nav {
+        flex-grow: 0;
+    }
+}
+
+@media (max-width: 720px) {
+    header {
+        padding: 10px;
+    }
+
+    .logo img {
+        height: 60px;
+    }
+}
+
+@media (max-width: 720px) {
+    nav ul {
+        gap: 20px;
+        font-size: 14px;
+    }
+}
+
+
 /* Banner Content Styles */
 .banner .container {
     display: flex;
@@ -333,11 +424,10 @@ nav a:hover {
     position: absolute;
     top: 0;
     right: 0;
-    width: 40vw;
 }
 
 .banner .subtitle {
-    font-size: 50px;
+    font-size: calc(2vw + 12px);
 }
 
 .banner ul {
@@ -350,7 +440,7 @@ nav a:hover {
     display: flex;
     align-items: center;
     gap: 15px;
-    font-size: 24px;
+    font-size: calc(0.7vw + 10px);
 }
 
 .banner .icon {
@@ -359,34 +449,122 @@ nav a:hover {
 }
 
 .banner button {
-    width: 190px;
-    height: 100px;
-    font-weight: bold;
+    padding: 40px 50px;
+}
+
+@media (max-width: 1640px) {
+    .banner-content {
+        padding-top: 260px;
+        gap: 40px;
+    }
+
+    .banner button {
+        padding: 32px 50px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .banner {
+        position: relative;
+    }
+
+    .banner .container {
+        flex-direction: column-reverse;
+    }
+
+    .banner-image {
+        width: 100%;
+        height: 100%;
+        z-index: -100;
+    }
+
+    .banner-image::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.55);
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .banner ul {
+        gap: 30px;
+    }
+
+    .banner li {
+        font-size: 18px;
+    }
+
+    .banner .icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .banner button {
+        padding: 25px 50px;
+    }
+}
+
+@media (max-width: 960px) {
+    .banner-content {
+        padding-top: 240px;
+        gap: 30px;
+    }
+
+    .banner ul {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .banner button {
+        padding: 20px 50px;
+    }
+}
+
+@media (max-width: 720px) {
+    .banner ul {
+        gap: 15px;
+    }
+
+    .banner .icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .banner button {
+        padding: 15px 30px;
+    }
+}
+
+@media (max-width: 540px) {
+    .banner-content {
+      padding-top: 200px;
+    }
+
+    .banner li {
+        font-size: 16px;
+    }
 }
 
 /*Advantages Content Styles */
 .advantages {
     padding-top: 100px;
     background-color: var(--bg-color-2);
-}
-
-.advantages {
-    display: flex;
-    justify-content: flex-end;
-    gap: 50px;
+    position: relative;
 }
 
 .advantages-content {
-    width: 32%;
+    width: 38%;
     display: flex;
     flex-direction: column;
     gap: 80px;
+    margin: 0 auto;
 }
 
 .advantages button {
     width: 100%;
-    height: 80px;
-    font-weight: bold;
 }
 
 .advantages-image {
@@ -394,7 +572,11 @@ nav a:hover {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 32%;
+    width: 30%;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    height: calc(100% - 100px);
 }
 
 .advantages ul {
@@ -407,7 +589,7 @@ nav a:hover {
     display: flex;
     align-items: center;
     gap: 20px;
-    font-size: 24px;
+    font-size: calc(0.7vw + 10px);
     position: relative;
 }
 
@@ -426,18 +608,90 @@ nav a:hover {
     height: 60px;
 }
 
+@media (max-width: 1600px) {
+    .advantages-content {
+        width: 60%;
+        margin: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .advantages li {
+        font-size: 18px;
+    }
+
+    .advantages-image {
+        width: 35%;
+    }
+
+    .advantages .icon {
+        min-width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 960px) {
+    .advantages-content {
+        width: 100%;
+    }
+
+    .advantages-image {
+        display: none;
+    }
+
+    .advantages .icon {
+        min-width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 720px) {
+    .advantages-content {
+        gap: 60px;
+    }
+
+    .advantages ul {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 540px) {
+    .advantages {
+        padding-top: 60px;
+    }
+
+    .advantages-content {
+        gap: 40px;
+    }
+
+    .advantages .icon {
+        min-width: 30px;
+        height: 30px;
+    }
+
+    .advantages ul {
+        gap: 40px;
+    }
+
+    .advantages li {
+        font-size: 18px;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
 /*Contact Form Styles */
 .contact-form {
     padding: 100px 0;
     background-color: var(--bg-color-2);
 }
 
-.contact-form .container {
+.contact-form .content-and-image {
     background-color: var(--bg-light-color);
     border-radius: 30px;
     display: flex;
     justify-content: space-between;
-    padding: 0;
+    padding: 0 20px;
 }
 
 .contact-content {
@@ -457,6 +711,8 @@ nav a:hover {
     background-repeat: no-repeat;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
+    position: relative;
+    right: -20px;
 }
 
 .contact-form form {
@@ -467,7 +723,50 @@ nav a:hover {
 
 .contact-form button {
     width: 100%;
-    height: 100px;
+}
+
+@media (max-width: 1200px) {
+    .contact-content {
+        padding: 40px 80px;
+    }
+
+    .contact-form form {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 960px) {
+    .contact-content {
+        padding: 35px 35px;
+    }
+}
+
+@media (max-width: 720px) {
+    .contact-image {
+        display: none;
+    }
+
+    .contact-content {
+        width: 100%;
+    }
+}
+
+@media (max-width: 540px) {
+    .contact-form {
+        padding: 60px 0;
+    }
+
+    .content-and-image {
+        padding: 0 10px;
+    }
+
+    .contact-content {
+        padding: 25px 0;
+    }
+
+    .contact-form form {
+        margin-top: 15px;
+    }
 }
 
 /* Footer Content Styles */
@@ -514,15 +813,11 @@ nav a:hover {
 }
 
 .logo-and-social button {
-    height: 80px;
-    width: 180px;
     font-style: italic;
-    font-size: 20px;
 }
 
 .footer-info {
     padding-bottom: 60px;
-    font-size: 20px;
 }
 
 .footer-info a {
@@ -532,4 +827,50 @@ nav a:hover {
 
 .footer-info a:hover {
     color: var(--primary-color);
+}
+
+@media (max-width: 960px) {
+    .call-to-action {
+        padding: 30px 0;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 25px;
+    }
+    
+    .social-links .icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .logo-and-social .logo {
+        width: 100px;
+    }
+}
+
+@media (max-width: 720px) {
+    .call-to-action {
+        padding: 20px 0;
+    }
+
+    .logo-and-social .logo {
+        width: fit-content;
+    }
+
+    .logo-and-social {
+        padding-top: 30px;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .social-links {
+        gap: 20px;
+    }
+
+    .footer-info {
+        font-size: 14px;
+        flex-direction: column;
+        gap: 15px;
+    }
 }
